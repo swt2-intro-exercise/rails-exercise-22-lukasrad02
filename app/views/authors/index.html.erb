@@ -1,0 +1,21 @@
+<h1>Authors</h1>
+
+<%= link_to "Add author", new_author_path %>
+
+<table>
+  <tr>
+    <th>
+      Name
+    </th>
+    <th>
+      Homepage
+    </th>
+  </tr>
+
+  <% @authors.each do |author| %>
+    <tr>
+      <td><%= link_to author.name, author_path(author) %></td>
+      <td><%= author.homepage %></td>
+    </tr>
+  <% end %>
+</table>
