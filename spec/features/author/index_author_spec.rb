@@ -32,7 +32,6 @@ describe "Author index page", type: :feature do
     end
   end
 
-
   it "should contain a link to add a new author" do
     visit authors_path
 
