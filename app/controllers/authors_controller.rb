@@ -7,7 +7,6 @@ class AuthorsController < ApplicationController
   end
 
   def create
-    puts "HALLO WELT; DIES IST EIN TEST"
     puts params[:author]
 
     @author = Author.new(author_params)
