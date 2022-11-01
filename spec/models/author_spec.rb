@@ -21,4 +21,12 @@ RSpec.describe Author, type: :model do
 
     expect(author.name).to eq(@full_name)
   end
+
+  it "requires last_name to be specified" do
+    author1 = Author.new(first_name: @first_name, last_name: nil, homepage: @homepage)
+    author2 = Author.new(first_name: @first_name, last_name: "", homepage: @homepage)
+
+    expect(author1).to_not be_valid
+    expect(author2).to_not be_valid
+  end
 end
