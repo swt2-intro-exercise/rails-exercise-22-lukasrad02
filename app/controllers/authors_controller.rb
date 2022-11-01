@@ -8,8 +8,6 @@ class AuthorsController < ApplicationController
   end
 
   def create
-    puts params[:author]
-
     @author = Author.new(author_params)
 
     if @author.save
