@@ -7,7 +7,7 @@ RSpec.describe Paper, type: :model do
     @year = 2022
   end
 
-  it "requires last_name to be specified" do
+  it "requires title to be specified" do
     paper1 = Paper.new(title: nil, venue: @venue, year: @year)
     paper2 = Paper.new(title: "", venue: @venue, year: @year)
 
