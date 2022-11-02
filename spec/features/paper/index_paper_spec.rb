@@ -17,4 +17,12 @@ describe "Paper index page", type: :feature do
       expect(page).to have_link("Edit this paper", href: edit_paper_path(paper))
     end
   end
+
+  it "should have a link for each paper to delete it" do
+    visit papers_path
+
+    @all_papers.each do |paper|
+      expect(page).to have_link("Delete this paper", href: paper_path(paper))
+    end
+  end
 end
