@@ -5,6 +5,8 @@ RSpec.describe Paper, type: :model do
     @title = "Some title"
     @venue = "Some venue"
     @year = 2022
+
+    @paper = Paper.new(title: @title, venue: @venue, year: @year)
   end
 
   it "requires title to be specified" do
@@ -31,5 +33,9 @@ RSpec.describe Paper, type: :model do
     expect(paper1).to_not be_valid
     expect(paper2).to_not be_valid
     expect(paper3).to_not be_valid
+  end
+
+  it "has an empty list of authors" do
+    expect(@paper.authors).to be_empty
   end
 end

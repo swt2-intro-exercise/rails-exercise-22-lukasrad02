@@ -29,4 +29,10 @@ RSpec.describe Author, type: :model do
     expect(author1).to_not be_valid
     expect(author2).to_not be_valid
   end
+
+  it "has an empty list of papers" do
+    author = Author.new(first_name: @first_name, last_name: @last_name, homepage: @homepage)
+
+    expect(author.papers).to be_empty
+  end
 end
